@@ -11,10 +11,13 @@ const Tab = createBottomTabNavigator();
 //Bottom Tabbar
 const Tabs = () => {
   const isDark = useColorScheme() === "dark";
-  console.log(isDark);
   return (
     <Tab.Navigator
+      sceneContainerStyle={{
+        backgroundColor: isDark ? BLACK_COLOR : "white",
+      }}
       screenOptions={{
+        unmountOnBlur: true,
         tabBarStyle: {
           backgroundColor: isDark ? BLACK_COLOR : "white",
         },
@@ -38,7 +41,6 @@ const Tabs = () => {
         component={Movies}
         options={{
           tabBarIcon: ({ focused, color, size }) => {
-            console.log(focused, color, size);
             return (
               <Ionicons
                 name={focused ? "film" : "film-outline"}
@@ -69,7 +71,6 @@ const Tabs = () => {
         component={Search}
         options={{
           tabBarIcon: ({ focused, color, size }) => {
-            console.log(focused, color, size);
             return (
               <Ionicons
                 name={focused ? "search" : "search-outline"}
