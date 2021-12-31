@@ -3,12 +3,10 @@ import React from "react";
 import Movies from "../screens/Movies";
 import Search from "../screens/Search";
 import Tv from "../screens/Tv";
-import { View, Text, useColorScheme } from "react-native";
+import { useColorScheme } from "react-native";
 import { BLACK_COLOR, GRAY_COLOR, WHITE_COLOR, YELLOW_COLOR } from "../colors";
 import { Ionicons } from "@expo/vector-icons";
-import Stack from "./Stack";
 const Tab = createBottomTabNavigator();
-//Bottom Tabbar
 const Tabs = () => {
   const isDark = useColorScheme() === "dark";
   return (
